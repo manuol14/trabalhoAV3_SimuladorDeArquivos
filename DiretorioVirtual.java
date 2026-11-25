@@ -1,13 +1,16 @@
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
+/**
+ * Diretório: uma tabela que liga cada nome ao seu item (como no Linux, é o
+ * diretório que guarda os nomes; os atributos ficam no cabeçalho de cada item).
+ */
 public class DiretorioVirtual extends NoSistema {
-    private static final long serialVersionUID = 1L;
-    private Map<String, NoSistema> filhos;
+    // TreeMap mantém os nomes em ordem alfabética, então o ls sai ordenado como no Linux
+    private final Map<String, NoSistema> filhos = new TreeMap<>();
 
-    public DiretorioVirtual(String nome, DiretorioVirtual pai) {
-        super(nome, pai);
-        this.filhos = new HashMap<>();
+    public DiretorioVirtual(String nome, DiretorioVirtual pai, CabecalhoArquivo cabecalho) {
+        super(nome, pai, cabecalho);
     }
 
     public Map<String, NoSistema> getFilhos() { return filhos; }

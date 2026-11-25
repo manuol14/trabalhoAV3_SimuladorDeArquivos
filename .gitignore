@@ -1,0 +1,7 @@
+# Gerados ao compilar
+*.class
+
+# Gerados ao rodar o simulador (o disco tem os dados de quem rodou; não vai para o GitHub)
+disco_virtual.dat
+disco_virtual.dat.tmp
+fs_journal.log
